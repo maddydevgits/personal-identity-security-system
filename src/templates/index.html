@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Identity Security using Blockchian</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="https://codepen.io/andytran/pen/vLmRVp.js"></script> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='login/style.css')}}"/>
+        <script src="{{url_for('static',filename='login/script.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <!--Data or Content-->
+            <div class="box-1">
+                <div class="content-holder">
+                    <h2>Hello!</h2>
+                   
+                    <button class="button-1" onclick="signup()">Sign up</button>
+                    <button class="button-2" onclick="login()">Login</button>
+                </div>
+            </div>
+
+            <!--Forms-->
+            <div class="box-2">
+                <div class="login-form-container">
+                    <form action="/loginUser" method="post">
+                        <h1>Login Form</h1>
+                        <input type="text" placeholder="Wallet Address" name="username1" class="input-field" required="">
+                        <br><br>
+                        <input type="password" placeholder="Password" name="password1" class="input-field" required="">
+                        <br><br>
+                        <button class="login-button" type="submit">Login</button>
+                    </form> <br/> <br/>
+                    <span style="color:red">{{err1}}</span>
+                    <span style="color:green">{{res1}}</span>
+                </div>
+      
+      
+      <!--Create Container for Signup form-->
+            <div class="signup-form-container">
+                <h1>Sign Up Form</h1>
+                <form action="/registerUser" method="post">
+                <input type="text" placeholder="Wallet Address" name="username" class="input-field" required="">
+                <br><br>
+                <input type="text" placeholder="Your Name" name="name" class="input-field" required="">
+                <br><br>
+                <input type="text" placeholder="Mobile" name="mobile" class="input-field" required="">
+                <br><br>
+                <input type="email" placeholder="Email" name="email" class="input-field" required="">
+                <br><br>
+                <input type="password" placeholder="Password" name="password" class="input-field" required="">
+                <br><br>
+                <button class="signup-button" type="submit">Sign Up</button>
+                </form> <br/><br/>
+                <span style="color: red;">{{err}}</span>
+                <span style="color:green">{{res}}</span>
+            </div>
+      
+      
+      
+            </div>
+    </body>
+</html>
